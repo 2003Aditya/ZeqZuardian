@@ -2,9 +2,7 @@ package ratelimiter
 
 import "time"
 
-func(b *RateLimiterBucket) ReFillToken() {
-    b.Mutex.Lock()
-    defer b.Mutex.Unlock()
+func(b *RateLimiterBucket) Refill() {
 
     now := time.Now()
 
