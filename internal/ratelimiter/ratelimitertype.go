@@ -13,6 +13,7 @@ type RateLimiterEvent struct {
 }
 
 type RateLimiterBucket struct {
+	APIKey     string    `json:"apikey"`
 	Tokens     float64    `json:"tokens"`
 	Capacity   float64    `json:"capacity"`
 	LastRefill time.Time  `json:"lastrefill"`
@@ -25,3 +26,6 @@ type RateLimiterManager struct {
     Mutex sync.Mutex
 
 }
+
+
+var Events []RateLimiterEvent

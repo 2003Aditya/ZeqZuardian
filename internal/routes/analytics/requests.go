@@ -5,6 +5,18 @@ import (
 	"net/http"
 )
 
+type RequestStats struct {
+    Total int `json:"total"`
+    Allowed int `json:"allowed"`
+    Blocked int `json:"blocked"`
+    PerKey map[string]KeySummary `json:"per_key"`
+}
+
+type KeySummary struct {
+    Allowed int `json:"allowed"`
+    Blocked int `json:"blocked"`
+}
+
 type Request struct {
 	Message string `json:"message"`
 	Route   string `json:"route"`
